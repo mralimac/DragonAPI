@@ -46,7 +46,7 @@ public final class PatreonController {
 		}
 		DonatorFile f = new DonatorFile(dev);
 		ArrayList<String> lines = ReikaFileReader.getFileAsLines(file, 10000, false, f);
-		if (lines != null) {
+		if (lines != null && file == null) {
 			DragonAPICore.log("Loading "+lines.size()+" patrons for "+dev);
 			this.addPatrons(dev, lines);
 		}
